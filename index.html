@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUASENSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/dashboard-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <button class="cancel-btn" onclick="closeMenu()">X</button>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="logo">AQUASENSE</a>
+            <div class="profile-menu" onclick="toggleProfileDropdown()">
+                <i class="fas fa-user-circle"></i>
+                <ul class="dropdown" id="profileDropdown">
+                    <li><span id="username">Username</span></li>
+                    <li><span id="phone">XXXXX XXXXX</span></li>
+                    <hr class="dropdown-divider">
+                    <li><button class="logout" onclick="logout()">Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>  
+    <main class="dashboard" id="dashboard">
+        <div class="upper">
+            <div class="water-level">
+                <h2 class="water-level-text">Water Level</h2>
+                <p class="water-level-used"><span id="water-level-number" class="water-level-number">00</span>% used</p>
+            </div>
+            
+            <div class="leakage">
+                <div class="leakage-details">
+                    <h2 class="leakage-text">Leak Possibility</h2>
+                    <p class="leakage-description">Less possibility of water leakage through pipes</p>
+                </div>
+                <button class="leakage-button" aria-label="Leakage Status: Low">Low</button>
+            </div>
+        </div>
+
+        <div class="weather">
+            <div class="weather-display">
+                <img src="./images/clear.png" class="weather-icon" alt="Weather Icon">
+                <p class="weather-city" id="weather-city">CITY NAME</p>
+                <h1 class="weather-temp" id="weather-temp">00°C</h1>
+                <p class="weather-range" id="weather-range">Min: 00°C / Max: 00°C</p>
+            </div>
+        </div>
+
+        <div class="water-flow">
+            <h2 class="water-flow-text">Water Flow Speed</h2>
+            <p class="water-flow-speed"><span id="water-flow-speed">0</span> L/min</p>
+        </div>        
+
+        <div class="graph">
+            <canvas id="waterLevelChart" width="1450" height="400"></canvas>
+        </div>
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                <b class="progress-bar-label"><span id="threshold-level-number" name="threshold-level-number">00</span> completed</b>
+                <div class="capacity-label" id="threshold-label"><span id="threshold-label-number">00</span>L</div>
+            </div>
+        </div>
+    </main>
+
+    <section class="contact-us" id="contact">
+        <div class="contact-background">
+            <h2>Contact Us</h2>
+            <p>Have any questions? We'd love to hear from you!</p>
+            <form id="contactForm">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+                <p id="responseMessage"></p>
+            </form>
+        </div>
+    </section>
+    
+    <script src="./js/dashboard.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "XE6fmh_5xqkxqDctY-gWy",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="XE6fmh_5xqkxqDctY-gWy"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

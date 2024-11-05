@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - AQUASENSE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/register-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AQUASENSE</h1>
+        <form id="registrationForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" required placeholder="Username">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="number" id="adults" name="adults" required min="0" placeholder="Number of Adults">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-child"></i>
+                <input type="number" id="children" name="children" required min="0" placeholder="Number of Children">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="city" name="city" required placeholder="Location (City)">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-bath"></i>
+                <input type="number" id="bathrooms" name="bathrooms" required min="0" placeholder="Number of Bathrooms">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-tint"></i>
+                <input type="number" id="fixtures" name="fixtures" required min="0" placeholder="Number of Water Fixtures">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-home"></i>
+                <input type="text" id="bhk" name="bhk" required placeholder="BHK of the Apartment">
+            </div>
+            <button type="submit" id="registerBtn">Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            localStorage.setItem("username", username);
+            
+            const city = document.getElementById("city").value;
+            localStorage.setItem("city", city);
+    
+            window.location.href = "index.html";
+        });
+    </script>    
+</body>
+</html>

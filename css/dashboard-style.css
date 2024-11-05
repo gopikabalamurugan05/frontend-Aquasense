@@ -1,0 +1,691 @@
+/* CSS for header and sidebar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling for the header */
+header {
+    background-color: #ace0f9;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header container to position elements */
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Menu icon styling */
+.menu-icon {
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 1.6em;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Profile icon styling */
+.profile-menu {
+    position: relative;
+    font-size: 1.6em;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: left;
+}
+
+/* Dropdown menu for profile */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 220px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.dropdown li {
+    list-style: none;
+    padding: 5px 15px;
+    font-size: 0.8em;
+    color: #333;
+}
+
+#username {
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.dropdown-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 8px 0;
+}
+
+.logout {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #ff4d4d;
+}
+
+/* Sidebar (navigation links) */
+.nav-links {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #7AB2D3;
+    padding-top: 60px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1001;
+    opacity: 0.8;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-links ul li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 20px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    background-color: #ace0f9;
+}
+
+/* Close button inside the sidebar */
+.cancel-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Adjust header padding */
+    header {
+        padding: 15px 15px;
+    }
+
+    /* Logo adjustments for readability on smaller screens */
+    .logo {
+        font-size: 1.4em;
+        margin-left: 5px;
+    }
+
+    /* Larger menu icon */
+    .menu-icon {
+        font-size: 1.8em;
+    }
+    
+    /* Larger sidebar link font size */
+    .nav-links ul li a {
+        font-size: 1.2em;
+    }
+
+    /* Profile dropdown adjustments for mobile */
+    .profile-menu .dropdown {
+        width: 160px;
+        right: -10px;
+        top: 125%;
+        background-color: #ffffff;
+        color: #333;
+        padding: 12px;
+    }
+
+    /* Larger font for profile dropdown items */
+    .dropdown li {
+        font-size: 0.6em;
+    }
+
+    /* Larger font for logout button */
+    .logout {
+        padding: 10px 14px;
+        font-size: 1em;
+    }
+}
+
+/* Smooth appearance transition */
+.nav-links, .profile-menu .dropdown {
+    transition: display 0.3s ease;
+}
+
+.dashboard {
+    padding: 2rem;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    height: 150vh;
+    gap: 2rem;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 2rem;
+}
+.upper {
+    display: flex;
+    flex-direction: row; 
+    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+    height: 17%;
+}
+
+.water-level, .leakage {
+    flex: 1;
+    background-color: #7AB2D3;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 1rem;
+}
+
+.water-level-text, .leakage-text {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.water-level-text{
+    margin-bottom: -10px;
+}
+
+.leakage-text{
+    margin-bottom: 0.6rem;
+}
+
+.water-level-number {
+    color: white;
+    font-size: 7rem;
+    margin: 0;
+    padding: 0;
+}
+
+.water-level-used, .leakage-description {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.leakage-description{
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.leakage-button {
+    background-color: green;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 50px;
+    border: 1px solid white;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .dashboard{
+        height: 93vh;
+    }
+    
+    .upper {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -1.2rem;
+        margin-top: 0.2rem;
+
+    }
+
+    .water-level, .leakage {
+        flex: 1;
+        padding: 1rem;
+        min-height: 8rem; /* Adjusted for improved visual balance */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #7AB2D3; /* Optional: Adds a background for better separation */
+        border-radius: 20px; /* Softens the look on mobile */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
+    }
+
+    /* Adjust font sizes for mobile readability */
+    .water-level-text, .leakage-text {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        text-align: center; /* Centers text for a cleaner look on mobile */
+    }
+
+    .water-level-text{
+        margin-bottom: -0.5rem;
+    }
+
+    .water-level-number {
+        font-size: 4.2rem;
+        margin: 0;
+        padding: 0;
+        font-weight: bold; /* Emphasizes the number visually */
+    }
+
+    .water-level-used, .leakage-description {
+        font-size: 0.9rem;
+        text-align: center;
+        color: white; /* Muted color for supplementary info */
+        margin-top: 0.5rem;
+    }
+
+    .leakage-description{
+        color: #6c757d;
+        font-size: 0.6rem;
+    }
+
+    .leakage-button {
+        font-size: 0.85rem;
+        padding: 0.4rem 2rem;
+        margin-top: 0.5rem;
+        border-radius: 20px; 
+        background-color: green;
+        color: #fff;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+}
+
+
+.weather {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7AB2D3;
+    padding: 0.3rem;
+    margin-top: 2%;
+    width: 100%;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.weather-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.weather-city {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.weather-temp {
+    font-size: 2rem;
+    margin: 0 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.weather-range {
+    font-size: 1.5rem;
+    text-align: right;
+    flex: 1;
+    margin: 0 1rem;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .weather {
+        padding: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .weather-display {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .weather-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .weather-city {
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+    }
+
+    .weather-temp {
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .weather-range {
+        font-size: 0.8rem;
+        margin: 0 0.5rem;
+        text-align: right;
+    }
+}
+
+.water-flow {
+    flex: 1;
+    background-color: #7AB2D3;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 1rem;
+    margin-top: 3%;
+    margin-bottom: 1rem; /* Adjusts spacing between elements */
+}
+
+.water-flow-text {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.water-flow-speed {
+    color: white;
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .water-flow {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .water-flow-text{
+        font-size: 1.5rem;
+    }
+    .water-flow-speed{
+        font-size: 2rem;
+    }
+}
+
+
+.graph {
+    position: absolute;
+    top: 52%;
+    border-radius: 20px;
+    border: 5px solid #7ab2d36d;
+}
+
+@media (max-width: 768px) {
+    .graph {
+        width: 85%;
+        height: 350px;
+        overflow-x: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-left: 0;
+        top: 41.5%;
+        align-items: center;
+    }
+
+    .graph canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Ensure the graph and progress bar container are in a responsive layout */
+.graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 15%;
+}
+
+.progress-bar {
+    width: 1000px;
+    height: 50px;
+    background-color: #7AB2D3;
+    border-radius: 20px;
+    position: absolute;
+    margin-top: 38%;
+    margin-left: 15%;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #ace0f9;
+    border-radius: 20px;
+    width: 0%;
+    animation: progress 0.8s ease-in-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress-bar-label, .capacity-label {
+    position: absolute;
+    color: #333;
+    transform: translate(-5%, -10%);
+    font-size: 14px;
+}
+
+.progress-bar-label {
+    top: 35%;
+    left: 45%;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.capacity-label {
+    top: -110%;
+    left: 0%;
+    background-color: #7AB2D3;
+    padding: 12px 20px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 1;
+    color: white;
+    font-size: 1rem;
+}
+
+.capacity-label:after {
+    content: "";
+    position: absolute;
+    bottom: -23%;
+    left: 33%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #7AB2D3;
+}
+
+@media (max-width: 768px) {
+    .progress-bar {
+        width: 80%; /* Smaller width for mobile */
+        height: 40px;
+        margin-top: 95%;
+        margin-left: 3%; /* Adjust margin to fit smaller screens */
+    }
+    
+    .progress-bar-label {
+        font-size: 1rem; /* Smaller font size for mobile */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .capacity-label {
+        font-size: 10px; /* Smaller font size for mobile */
+        top: -100%; /* Adjust position for mobile */
+        padding: 8px 15px;
+    }
+    
+    .capacity-label:after {
+        bottom: -22%; /* Adjust arrow position */
+        border-top: 15px solid #7AB2D3; /* Smaller arrow for mobile */
+    }
+}
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #ace0f9; /* Light blue background */
+    padding: 2rem; /* Padding for space */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 1450px; /* Maximum width for larger screens */
+    margin: 2rem auto; /* Centered with margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center text alignment */
+}
+
+.contact-us h2 {
+    font-size: 2rem; /* Heading size */
+    color: #0078a0; /* Heading color */
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+.contact-us p {
+    font-size: 1rem; /* Paragraph size */
+    color: #555; /* Paragraph color */
+    margin-bottom: 1.5rem; /* Space below paragraph */
+}
+
+.input-group {
+    margin-bottom: 1rem; /* Space between input fields */
+    text-align: left; /* Align text to the left */
+}
+
+.input-group label {
+    display: block; /* Block display for labels */
+    font-weight: 600; /* Bold labels */
+    color: #333; /* Label color */
+    margin-bottom: 0.5rem; /* Space below labels */
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 0.8rem; /* Padding for comfort */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    resize: vertical; /* Allow vertical resize for text area */
+}
+
+button[type="submit"] {
+    background-color: #0078a0; /* Primary button color */
+    color: #fff; /* White text */
+    padding: 0.8rem 2rem; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+button[type="submit"]:hover {
+    background-color: #005a75; /* Darker shade on hover */
+}
+
+#responseMessage {
+    margin-top: 1rem; /* Space above response message */
+    font-size: 1rem; /* Font size for message */
+    color: #0078a0; /* Message color */
+}
+
+@media (max-width: 600px) {
+    .contact-us {
+        padding: 1.5rem; /* Reduced padding for mobile */
+        margin: 1rem; /* Reduced margin for mobile */
+    }
+
+    .contact-us h2 {
+        font-size: 1.75rem; /* Smaller heading for mobile */
+    }
+
+    .contact-us p {
+        font-size: 0.9rem; 
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 0.7rem; 
+        font-size: 0.95rem; 
+    }
+
+    button[type="submit"] {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem; 
+    }
+}

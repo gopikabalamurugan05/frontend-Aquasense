@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AQUASENSE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AQUASENSE</h1>
+         
+        <form id="loginForm" onsubmit="return verifyOTP()">
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter Mobile Number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number">
+            </div>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+
+            <div class="input-group otp-group" style="display:none;">
+                <i class="fas fa-key"></i>
+                <input type="text" id="otp" name="otp" required placeholder="Enter OTP">
+            </div>
+            <button type="submit" style="display:none;" id="verifyOtpButton">Verify OTP</button>
+
+            <!-- Message container for feedback -->
+            <div id="message" style="display:none;" class="message"></div>
+        </form>
+    </div>
+
+    <script src="./js/login-js.js"></script>
+</body>
+</html>

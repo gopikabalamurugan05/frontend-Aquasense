@@ -1,0 +1,139 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.container {
+    background-color: #7AB2D3;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #AAAAAA;
+    font-size: 1.2rem;
+}
+
+input {
+    width: calc(93.5% - 50px);
+    padding: 0.75rem 40px;
+    border: 2px solid #DFF2EB;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+    color: #AAAAAA;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+    color: #AAAAAA;
+}
+
+input:focus {
+    border-color: #B9E5E8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(186, 229, 232, 0.5);
+}
+
+button {
+    background-color: white;
+    color: #7AB2D3;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #B9E5E8;
+    color: #4682A9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.otp-group {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.95rem;
+        padding: 0.65rem 40px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+.message {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
